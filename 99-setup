@@ -1,0 +1,6 @@
+#!/bin/bash
+
+# no password for sudo
+echo "abc ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/abc
+
+sudo -u abc /config/bootstrap.sh
