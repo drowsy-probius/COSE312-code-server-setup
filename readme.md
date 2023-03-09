@@ -36,5 +36,30 @@ vscode 파일과 프로젝트 파일이 저장될 폴더를 생성합니다.
 4. edit files
 개인 설정에 맞게 `docker-compose.yml`파일을 수정합니다.
 
+기본 설치된 익스텐션 목록
+- analytic-signal.preview-pdf
+vscode에서 pdf를 볼 수 있습니다.
+
+- freebroccolo.reasonml
+ocaml 하이라이트 및 linter
+
+- esbenp.prettier-vscode
+prettier
+
+- ms-python.python
+python extension bundle
+
+- streetsidesoftware.code-spell-checker
+code spell checker
+
+- formulahendry.code-runner
+적절히 설정되어 있다면 `ctrl + alt + n`으로 열린 코드를 실행할 수 있습니다.
+
+- vscode-icons-team.vscode-icons
+파일브라우저에서 더 나은 아이콘 경험
+
+- naumovs.color-highlight
+색상코드 하이라이트
+
 5. deploy
 `docker compose up -d` 명령어를 통하여 컨테이너를 실행합니다.

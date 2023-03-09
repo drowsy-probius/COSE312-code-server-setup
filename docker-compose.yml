@@ -28,7 +28,7 @@ services:
       - PROXY_DOMAIN=your_custom_domain_here_if_exists
       - DEFAULT_WORKSPACE=/config/workspace
       - DOCKER_MODS=linuxserver/mods:code-server-python3|linuxserver/mods:code-server-extension-arguments
-      - VSCODE_EXTENSION_IDS=freebroccolo.reasonml|esbenp.prettier-vscode|ms-python.python|streetsidesoftware.code-spell-checker|formulahendry.code-runner|vscode-icons-team.vscode-icons|naumovs.color-highlight
+      - VSCODE_EXTENSION_IDS=analytic-signal.preview-pdf|freebroccolo.reasonml|esbenp.prettier-vscode|ms-python.python|streetsidesoftware.code-spell-checker|formulahendry.code-runner|vscode-icons-team.vscode-icons|naumovs.color-highlight
 # you can generate hassed password using below command
 # echo "password" | sha256sum | cut -d' ' -f1
       - HASHED_PASSWORD=your_hassed_password_here
