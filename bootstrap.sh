@@ -78,11 +78,11 @@ fi
 
 grep -qxF "eval \$(opam env)" ~/.bashrc || echo "eval \$(opam env)" >> ~/.bashrc
 
-if [ -d "/config/workspace/.git" ]
-then
-  cd /config/workspace
-  git pull
-else
-  git clone https://github.com/kupl-courses/COSE312-2023spring /config/workspace
-fi
+# if [ -d "/config/workspace/.git" ]
+# then
+#   cd /config/workspace
+#   git pull
+# else
+#   git clone https://github.com/kupl-courses/COSE312-2023spring /config/workspace
+# fi
 
