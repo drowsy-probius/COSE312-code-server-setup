@@ -36,6 +36,8 @@ services:
       - 'EXTENSIONS_GALLERY={"serviceUrl": "https://marketplace.visualstudio.com/_apis/public/gallery", "itemUrl": "https://marketplace.visualstudio.com/items"}'
     hostname: "code-ocaml"
     restart: unless-stopped
+    ports:
+      - 8443:8443
     logging:
       driver: "json-file"
       options:

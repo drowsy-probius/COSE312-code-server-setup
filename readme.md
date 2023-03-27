@@ -12,11 +12,14 @@ ocaml 및 관련 설정으로 인하여 컨테이너의 첫 구동 시간이 오
 
 `bootstrap.sh` 스크립트의 headless 실행을 위하여 `sudo` 요청 시 패스워드 입력을 비활성화했습니다.
 
+![예제 이미지](./demo.png)
+
 # Setup
 
 1. install docker, docker-compose
 
 2. make directory to store files
+
 vscode 파일과 프로젝트 파일이 저장될 폴더를 생성합니다.
 
 3. copy files
