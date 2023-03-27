@@ -91,3 +91,11 @@ code spell checker
 6. access
 
 웹 브라우저를 통하여 `localhost:8443`에 접속하면 VSCode와 유사한 환경으로 코딩할 수 있습니다.
+
+`bash` 터미널을 이용하여 아래 명령어를 수행하면 깃허브 내용을 가져올 수 있습니다.
+```bash
+git clone https://github.com/kupl-courses/COSE312-2023spring.git
+```
+
+
+
