@@ -39,6 +39,8 @@ vscode 파일과 프로젝트 파일이 저장될 폴더를 생성합니다.
   | - /workspace
 ```
 
+폴더 구성에 따라 `docker-compose.yml`의 `volumns`항목은 수정되어야 합니다!
+
 
 
 4. edit files
@@ -72,7 +74,18 @@ code spell checker
 
 5. deploy
 
-`docker compose up -d` 명령어를 통하여 컨테이너를 실행합니다.
+```
+/code-server-ocaml
+  | - docker-compose.yml
+  | - /settings
+       | - 99-setup
+       | - bootstrap.sh
+  | - /workspace
+```
+
+위와 같은 폴더 구조를 구성했다면 
+
+`/code-server-ocaml`로 이동한 뒤 `docker compose up -d` 명령어를 통하여 컨테이너를 실행합니다.
 
 
 6. access
