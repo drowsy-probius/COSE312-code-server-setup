@@ -22,7 +22,10 @@ ocaml 및 관련 설정으로 인하여 컨테이너의 첫 구동 시간이 오
 
 vscode 파일과 프로젝트 파일이 저장될 폴더를 생성합니다.
 
+
+
 3. copy files
+
 `99-setup`, `bootstrap.sh`를 호스트의 적절한 폴더에 복사합니다.
 
 ```
@@ -36,7 +39,10 @@ vscode 파일과 프로젝트 파일이 저장될 폴더를 생성합니다.
   | - /workspace
 ```
 
+
+
 4. edit files
+
 개인 설정에 맞게 `docker-compose.yml`파일을 수정합니다.
 
 기본 설치된 익스텐션 목록
@@ -65,4 +71,10 @@ code spell checker
 색상코드 하이라이트
 
 5. deploy
+
 `docker compose up -d` 명령어를 통하여 컨테이너를 실행합니다.
+
+
+6. access
+
+웹 브라우저를 통하여 `localhost:8443`에 접속하면 VSCode와 유사한 환경으로 코딩할 수 있습니다.
