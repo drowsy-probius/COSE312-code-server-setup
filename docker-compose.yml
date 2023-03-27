@@ -6,17 +6,21 @@ services:
     dns:
       - 8.8.8.8
       - 1.1.1.1
-# set this value for your needs
+# set this value as your needs
     shm_size: '2gb'
 # privileged: true is needed for opam setup
     privileged: true
-# set this values for your needs
+# set this values as your needs
+# cpus are processors not physical cores. 
+# eg. if host has 4core 2threads -> 8 cpus in here
     deploy:
       resources:
         limits:
           memory: 8G
           cpus: '4'
-# set this values for your needs
+# set this values as your needs
+# {your_host_directory}:{container_directory}
+# DO NOT CHAGNE container_directory parts
     volumes:
       - /code-server-ocaml/workspace:/config/workspace
       - /code-server-ocaml/settings/bootstrap.sh:/config/bootstrap.sh:ro
@@ -25,12 +29,15 @@ services:
       - PUID=1000
       - PGID=1000
       - TZ=Asia/Seoul
+# comment below line if you run app in your local host only.
       - PROXY_DOMAIN=your_custom_domain_here_if_exists
       - DEFAULT_WORKSPACE=/config/workspace
       - DOCKER_MODS=linuxserver/mods:code-server-python3|linuxserver/mods:code-server-extension-arguments
       - VSCODE_EXTENSION_IDS=analytic-signal.preview-pdf|freebroccolo.reasonml|esbenp.prettier-vscode|ms-python.python|streetsidesoftware.code-spell-checker|formulahendry.code-runner|vscode-icons-team.vscode-icons|naumovs.color-highlight
 # you can generate hassed password using below command
-# echo "password" | sha256sum | cut -d' ' -f1
+# echo "your_password_here" | sha256sum | cut -d' ' -f1
+# 
+# if you dont want authentication then comment below line
       - HASHED_PASSWORD=your_hassed_password_here
 # enable ms extension store
       - 'EXTENSIONS_GALLERY={"serviceUrl": "https://marketplace.visualstudio.com/_apis/public/gallery", "itemUrl": "https://marketplace.visualstudio.com/items"}'
