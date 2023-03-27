@@ -6,21 +6,19 @@ services:
     dns:
       - 8.8.8.8
       - 1.1.1.1
-# set this value as your needs
+# 컨테이너의 공유 메모리 설정
     shm_size: '2gb'
-# privileged: true is needed for opam setup
+# opam 설치에 필요
     privileged: true
-# set this values as your needs
-# cpus are processors not physical cores. 
-# eg. if host has 4core 2threads -> 8 cpus in here
+# cpu는 물리적 코어 수가 아니라 프로세서 수이다. 
+# eg. 만약 호스트 머신이 4core 2threads라면 전체 8 cpus가 된다.
     deploy:
       resources:
         limits:
           memory: 8G
           cpus: '4'
-# set this values as your needs
-# {your_host_directory}:{container_directory}
-# DO NOT CHAGNE container_directory parts
+# {호스트_폴더}:{컨테이너_내부_폴더} 형식
+# 컨테이너_내부_폴더는 변경하지 말 것
     volumes:
       - /code-server-ocaml/workspace:/config/workspace
       - /code-server-ocaml/settings/bootstrap.sh:/config/bootstrap.sh:ro
@@ -29,17 +27,18 @@ services:
       - PUID=1000
       - PGID=1000
       - TZ=Asia/Seoul
-# comment below line if you run app in your local host only.
+# 로컬호스트에서만 실행한다면 아래 항목은 주석처리하여도 됨
       - PROXY_DOMAIN=your_custom_domain_here_if_exists
       - DEFAULT_WORKSPACE=/config/workspace
       - DOCKER_MODS=linuxserver/mods:code-server-python3|linuxserver/mods:code-server-extension-arguments
+# 아래 항목에서 자동 설치될 VSCode 확장프로그램 목록을 수정할 수 있음.
       - VSCODE_EXTENSION_IDS=analytic-signal.preview-pdf|freebroccolo.reasonml|esbenp.prettier-vscode|ms-python.python|streetsidesoftware.code-spell-checker|formulahendry.code-runner|vscode-icons-team.vscode-icons|naumovs.color-highlight
-# you can generate hassed password using below command
-# echo "your_password_here" | sha256sum | cut -d' ' -f1
+# 해시된 패스워드를 얻으려면 아래 명령어를 실행한다.
+# echo "여기에_원래_비밀번호_입력" | sha256sum | cut -d' ' -f1
 # 
-# if you dont want authentication then comment below line
+# 접속 시에 비밀번호 인증을 원치 않으면 아래 항목을 주석처리한다.
       - HASHED_PASSWORD=your_hassed_password_here
-# enable ms extension store
+# 공식 MS 익스텐션을 활성화.
       - 'EXTENSIONS_GALLERY={"serviceUrl": "https://marketplace.visualstudio.com/_apis/public/gallery", "itemUrl": "https://marketplace.visualstudio.com/items"}'
     hostname: "code-ocaml"
     restart: unless-stopped
