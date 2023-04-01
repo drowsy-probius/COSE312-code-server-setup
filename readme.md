@@ -54,6 +54,9 @@ vscode에서 pdf를 볼 수 있습니다.
 - freebroccolo.reasonml
 ocaml 하이라이트 및 linter
 
+- ocamllabs.ocaml-platform|
+공식 ocaml 익스텐션
+
 - esbenp.prettier-vscode
 prettier
 

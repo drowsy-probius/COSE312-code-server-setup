@@ -32,7 +32,7 @@ services:
       - DEFAULT_WORKSPACE=/config/workspace
       - DOCKER_MODS=linuxserver/mods:code-server-python3|linuxserver/mods:code-server-extension-arguments
 # 아래 항목에서 자동 설치될 VSCode 확장프로그램 목록을 수정할 수 있음.
-      - VSCODE_EXTENSION_IDS=analytic-signal.preview-pdf|freebroccolo.reasonml|esbenp.prettier-vscode|ms-python.python|streetsidesoftware.code-spell-checker|formulahendry.code-runner|vscode-icons-team.vscode-icons|naumovs.color-highlight
+      - VSCODE_EXTENSION_IDS=ocamllabs.ocaml-platform|analytic-signal.preview-pdf|freebroccolo.reasonml|esbenp.prettier-vscode|ms-python.python|streetsidesoftware.code-spell-checker|formulahendry.code-runner|vscode-icons-team.vscode-icons|naumovs.color-highlight
 # 해시된 패스워드를 얻으려면 아래 명령어를 실행한다.
 # echo "여기에_원래_비밀번호_입력" | sha256sum | cut -d' ' -f1
 # 

@@ -76,6 +76,18 @@ if [[ ! -d "${OPAM_LIB_DIR%%/}/z3" ]]; then
   echo "[NOTE] End-up Install Z3"
 fi
 
+# Setup OCAML CUSTOM Dependencies
+echo "[NOTE] Start Setup OCAML CUSTOM Dependencies"
+eval $(opam env)
+for pkg in "ocaml-lsp-server 1.7.0" "merlin 2.7-412" "ocamlformat-rpc-lib 0.21.0" "ocp-indent 1.8.1"; do
+  pkg_pair=( $pkg )
+  pkg_name=${pkg_pair[0]}
+  pkg_version=${pkg_pair[1]}
+  opam install -y -j $CORES "$pkg_name>=$pkg_version"
+  echo "[NOTE] $pkg_name: Installed as OCAML package"
+done
+echo "[NOTE] End-up Setup OCAML CUSTOM Dependencies"
+
 grep -qxF "eval \$(opam env)" ~/.bashrc || echo "eval \$(opam env)" >> ~/.bashrc
 
 # if [ -d "/config/workspace/.git" ]
